@@ -12,6 +12,9 @@ public class ByteArrayRandomAccessBufferFactory implements LockableRandomAccessB
     public LockableRandomAccessBuffer makeRAF(long size) throws IOException {
         if(size < 0) throw new IllegalArgumentException();
         if(size > Integer.MAX_VALUE) throw new IOException("Too big");
+		System.out.print("\nmakeRAF size: ");
+		System.out.print(size);
+		System.out.print('\n');
         byte[] buf = new byte[(int)size];
         return new ByteArrayRandomAccessBuffer(buf);
     }
